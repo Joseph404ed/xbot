@@ -92,7 +92,7 @@ pub async fn generate_debate(question: &str, llm: &LlmClient) -> Result<DebateTh
     let debaters: Vec<(&str, &str)> = names[..3].iter().copied().zip(ROLES.iter().copied()).collect();
 
     let opener = format!(
-        "Agents debate: \"{}\"\n\nThree perspectives from the ZeroicAI agent network.",
+        "Agents debate: \"{}\"\n\nThree perspectives from the RustyAI agent network.",
         question
     );
 
@@ -100,7 +100,7 @@ pub async fn generate_debate(question: &str, llm: &LlmClient) -> Result<DebateTh
 
     for (name, role) in &debaters {
         let prompt = format!(
-            "You are Agent {name} in the ZeroicAI multi-agent framework.\n\
+            "You are Agent {name} in the RustyAI multi-agent framework.\n\
             Debate topic: \"{topic}\"\n\
             Your role: {role}\n\
             \n\
