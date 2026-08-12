@@ -16,7 +16,7 @@ use std::sync::Arc;
 use tokio::sync::Mutex;
 use chrono::{Utc, NaiveDate};
 
-use z_cognition::{BeliefBase, Belief, ReasoningEngine};
+use cognition::{BeliefBase, Belief, ReasoningEngine};
 
 use generators::{TweetGenerator, TopicQueue, TweetTopic};
 use llm::LlmClient;
@@ -81,7 +81,7 @@ async fn main() -> Result<()> {
     dotenv().ok();
     tracing_subscriber::fmt::init();
 
-    info!("ZeroicAI Bot starting...");
+    info!("RustyAI Bot starting...");
 
     let config = BotConfig::from_env()?;
     config.validate()?;
@@ -379,7 +379,7 @@ async fn generate_reply_with_llm(
     llm: &LlmClient,
 ) -> Option<String> {
     let all_keys = [
-        "what_is_zeroicai", "bdi", "patterns", "messaging", "cognition_crate",
+        "what_is_rustyai", "bdi", "patterns", "messaging", "cognition_crate",
         "runtime_crate", "supervisor", "circuit_breaker", "sandbox", "solana", "install", "docs",
         "owner", "token", "token_ca", "token_ticker", "token_tokenomics", "why_rust",
     ];
@@ -403,10 +403,10 @@ async fn generate_reply_with_llm(
     };
 
     let prompt = format!(
-        "You are Agent {agent_name}, an AI agent inside the ZeroicAI multi-agent framework for Rust.\n\
-        A user mentioned @ZeroicAI on X (Twitter).{conversation}\n\
+        "You are Agent {agent_name}, an AI agent inside the RustyAI multi-agent framework for Rust.\n\
+        A user mentioned @RustyAI on X (Twitter).{conversation}\n\
         {image_note}\
-        \nZeroicAI knowledge (do not invent facts outside this):\n{context}\n\
+        \nRustyAI knowledge (do not invent facts outside this):\n{context}\n\
         \nHow to reply:\n\
         - Read the full conversation context before responding — your reply must address what they actually asked\n\
         - If they ask what it is or want a simple explanation: explain in plain human terms, no jargon\n\
