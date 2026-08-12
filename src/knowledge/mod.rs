@@ -1,26 +1,26 @@
-use z_cognition::{BeliefBase, Belief};
+use cognition::{BeliefBase, Belief};
 
-/// Build the ZeroicAI knowledge base with all framework facts
+/// Build the RustyAI knowledge base with all framework facts
 pub fn build_knowledge_base() -> BeliefBase {
     let mut beliefs = BeliefBase::new();
 
     // Core framework
-    beliefs.add(Belief::new("what_is_zeroicai", "ZeroicAI is a modular multi-agent framework for Rust. It provides agent lifecycles, messaging, cognition, organizational patterns, and supervised runtime execution."));
-    beliefs.add(Belief::new("language", "ZeroicAI is built entirely in Rust for type safety, performance, and zero-cost abstractions."));
-    beliefs.add(Belief::new("license", "ZeroicAI is open source under the MIT and Apache-2.0 dual license."));
-    beliefs.add(Belief::new("github", "ZeroicAI source code is available at https://github.com/ZeroicAI"));
-    beliefs.add(Belief::new("website", "Learn more at https://zeroicai.xyz"));
-    beliefs.add(Belief::new("telegram", "Join the ZeroicAI community on Telegram: https://t.me/ZeroicAI"));
-    beliefs.add(Belief::new("twitter", "Follow ZeroicAI on X: https://x.com/ZeroicAI"));
-    beliefs.add(Belief::new("owner", "ZeroicAI was created by Daniel, a full-stack developer based in the USA. He designed the framework architecture from the ground up, built all five core crates in Rust, and is leading the project toward a stable 1.0 release. Find him on GitHub and X/Twitter at @pycogram, and follow the project at github.com/ZeroicAI."));
+    beliefs.add(Belief::new("what_is_rustyai", "RustyAI is a modular multi-agent framework for Rust. It provides agent lifecycles, messaging, cognition, organizational patterns, and supervised runtime execution."));
+    beliefs.add(Belief::new("language", "RustyAI is built entirely in Rust for type safety, performance, and zero-cost abstractions."));
+    beliefs.add(Belief::new("license", "RustyAI is open source under the MIT and Apache-2.0 dual license."));
+    beliefs.add(Belief::new("github", "RustyAI source code is available at https://github.com/RustyAI"));
+    beliefs.add(Belief::new("website", "Learn more at https://rustyai.xyz"));
+    beliefs.add(Belief::new("telegram", "Join the RustyAI community on Telegram: https://t.me/RustyAI"));
+    beliefs.add(Belief::new("twitter", "Follow RustyAI on X: https://x.com/RustyAI"));
+    beliefs.add(Belief::new("owner", "RustyAI was created by Daniel, a full-stack developer based in the USA. He designed the framework architecture from the ground up, built all five core crates in Rust, and is leading the project toward a stable 1.0 release. Find him on GitHub and X/Twitter at @pycogram, and follow the project at github.com/RustyAI."));
 
     // Crate structure
-    beliefs.add(Belief::new("crates", "ZeroicAI has 5 core crates: z-core, z-messaging, z-cognition, z-patterns, and z-runtime."));
-    beliefs.add(Belief::new("core_crate", "z-core defines the Agent trait, AgentId, AgentContext, AgentState lifecycle, and error handling."));
-    beliefs.add(Belief::new("messaging_crate", "z-messaging provides Router, Message, MessageBuilder, and FIPA performatives for agent communication."));
-    beliefs.add(Belief::new("cognition_crate", "z-cognition provides BDI architecture (beliefs, desires, intentions), planning, reasoning, and utility functions."));
-    beliefs.add(Belief::new("patterns_crate", "z-patterns provides 8 organizational patterns for structuring multi-agent systems."));
-    beliefs.add(Belief::new("runtime_crate", "z-runtime provides scheduling, supervision, circuit breakers, metrics, and agent isolation."));
+    beliefs.add(Belief::new("crates", "RustyAI has 5 core crates: agent-core, messaging, cognition, patterns, and runtime."));
+    beliefs.add(Belief::new("agent_core_crate", "agent-core defines the Agent trait, AgentId, AgentContext, AgentState lifecycle, and error handling."));
+    beliefs.add(Belief::new("messaging_crate", "messaging provides Router, Message, MessageBuilder, and FIPA performatives for agent communication."));
+    beliefs.add(Belief::new("cognition_crate", "cognition provides BDI architecture (beliefs, desires, intentions), planning, reasoning, and utility functions."));
+    beliefs.add(Belief::new("patterns_crate", "patterns provides 8 organizational patterns for structuring multi-agent systems."));
+    beliefs.add(Belief::new("runtime_crate", "runtime provides scheduling, supervision, circuit breakers, metrics, and agent isolation."));
 
     // Agent trait
     beliefs.add(Belief::new("agent_trait", "Every agent implements the Agent trait with three async methods: initialize(), execute(), and shutdown()."));
@@ -40,7 +40,7 @@ pub fn build_knowledge_base() -> BeliefBase {
     beliefs.add(Belief::new("reasoning", "The ReasoningEngine performs rule-based inference using if-then rules."));
 
     // Patterns
-    beliefs.add(Belief::new("patterns", "ZeroicAI supports 8 organizational patterns: Hierarchy, Swarm, Coalition, Market, Blackboard, Federation, Holarchy, and Team."));
+    beliefs.add(Belief::new("patterns", "RustyAI supports 8 organizational patterns: Hierarchy, Swarm, Coalition, Market, Blackboard, Federation, Holarchy, and Team."));
     beliefs.add(Belief::new("hierarchy", "Hierarchy pattern: command chains with Strategic, Tactical, and Operational levels. Tasks delegate down the chain."));
     beliefs.add(Belief::new("swarm", "Swarm pattern: decentralized coordination with flocking (separation, alignment, cohesion), foraging, and consensus voting."));
     beliefs.add(Belief::new("coalition", "Coalition pattern: temporary alliances where agents join forces with a shared strategy and combined value."));
@@ -59,29 +59,29 @@ pub fn build_knowledge_base() -> BeliefBase {
     beliefs.add(Belief::new("sandbox", "Sandbox provides agent isolation with CPU quota, memory limits, thread limits, and network isolation."));
 
     // Getting started
-    beliefs.add(Belief::new("install", "Add z-core to your Cargo.toml dependencies. Use async-trait and tokio for async support."));
-    beliefs.add(Belief::new("examples", "8 working examples are available at https://github.com/ZeroicAI/z-examples covering all 5 crates."));
-    beliefs.add(Belief::new("docs", "Documentation is available at https://zeroicai.xyz/docs"));
+    beliefs.add(Belief::new("install", "Add agent-core to your Cargo.toml dependencies. Use async-trait and tokio for async support."));
+    beliefs.add(Belief::new("examples", "8 working examples are available at https://github.com/RustyAI/examples covering all 5 crates."));
+    beliefs.add(Belief::new("docs", "Documentation is available at https://rustyai.xyz/docs"));
 
     // Solana integration
-    beliefs.add(Belief::new("solana", "ZeroicAI has native Solana integration. Agents can transact, coordinate, and settle on-chain using the Solana network — sub-second finality, low fees."));
-    beliefs.add(Belief::new("solana_usecase", "Use ZeroicAI on Solana for: autonomous DeFi agents, on-chain coordination, decentralized AI marketplaces, and trustless agent economies."));
-    beliefs.add(Belief::new("defi_agents", "ZeroicAI agents can monitor liquidity pools, execute swaps, manage risk, and rebalance portfolios autonomously on Solana."));
+    beliefs.add(Belief::new("solana", "RustyAI has native Solana integration. Agents can transact, coordinate, and settle on-chain using the Solana network — sub-second finality, low fees."));
+    beliefs.add(Belief::new("solana_usecase", "Use RustyAI on Solana for: autonomous DeFi agents, on-chain coordination, decentralized AI marketplaces, and trustless agent economies."));
+    beliefs.add(Belief::new("defi_agents", "RustyAI agents can monitor liquidity pools, execute swaps, manage risk, and rebalance portfolios autonomously on Solana."));
 
     // Token
-    beliefs.add(Belief::new("token", "ZeroicAI has a token on Pump.fun. Name: ZeroicAI, Ticker: 0ICAI, CA: yi66MMYBeHvMAbiboJeqVcjXh3b746D3P6nCRfypump"));
+    beliefs.add(Belief::new("token", "RustyAI has a token on Pump.fun. Name: RustyAI, Ticker: rAI, CA: yi66MMYBeHvMAbiboJeqVcjXh3b746D3P6nCRfypump"));
     beliefs.add(Belief::new("token_ca", "Contract address: yi66MMYBeHvMAbiboJeqVcjXh3b746D3P6nCRfypump"));
-    beliefs.add(Belief::new("token_ticker", "The ZeroicAI token ticker is 0ICAI, deployed on Pump.fun on Solana."));
-    beliefs.add(Belief::new("token_tokenomics", "0ICAI is an early-stage community token on Pump.fun. No staking or DAO governance exists yet. Value is tied to ZeroicAI framework adoption — as developers build on it and the ecosystem grows, demand for 0ICAI grows with it. Utility integrations are planned as the framework matures to 1.0."));
+    beliefs.add(Belief::new("token_ticker", "The RustyAI token ticker is rAI, deployed on Pump.fun on Solana."));
+    beliefs.add(Belief::new("token_tokenomics", "rAI is an early-stage community token on Pump.fun. No staking or DAO governance exists yet. Value is tied to RustyAI framework adoption — as developers build on it and the ecosystem grows, demand for rAI grows with it. Utility integrations are planned as the framework matures to 1.0."));
 
     // Debate agents
-    beliefs.add(Belief::new("debate_agents", "ZeroicAI runs a debate agent system on X: multiple agents with different personas (ZERO, AXIOM, NEXUS, CIPHER, VECTOR) debate trending topics in AI, crypto, and tech."));
+    beliefs.add(Belief::new("debate_agents", "RustyAI runs a debate agent system on X: multiple agents with different personas (ZERO, AXIOM, NEXUS, CIPHER, VECTOR) debate trending topics in AI, crypto, and tech."));
 
     // Philosophy
-    beliefs.add(Belief::new("why_rust", "Rust gives ZeroicAI type safety, zero-cost abstractions, fearless concurrency, and no garbage collector pauses."));
-    beliefs.add(Belief::new("design", "ZeroicAI uses composition over inheritance, async-first design, zero-cost patterns, and fail-graceful architecture."));
-    beliefs.add(Belief::new("fipa", "FIPA is the Foundation for Intelligent Physical Agents, an IEEE standard for agent communication that ZeroicAI implements."));
-    beliefs.add(Belief::new("modular", "Use only what you need. A simple agent needs only z-core. Complex systems compose all five crates."));
+    beliefs.add(Belief::new("why_rust", "Rust gives RustyAI type safety, zero-cost abstractions, fearless concurrency, and no garbage collector pauses."));
+    beliefs.add(Belief::new("design", "RustyAI uses composition over inheritance, async-first design, zero-cost patterns, and fail-graceful architecture."));
+    beliefs.add(Belief::new("fipa", "FIPA is the Foundation for Intelligent Physical Agents, an IEEE standard for agent communication that RustyAI implements."));
+    beliefs.add(Belief::new("modular", "Use only what you need. A simple agent needs only agent-core. Complex systems compose all five crates."));
 
     beliefs
 }
