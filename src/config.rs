@@ -9,7 +9,7 @@ pub struct BotConfig {
     pub enable_crypto: bool,
     pub enable_meme: bool,
     pub enable_ai: bool,
-    pub enable_zeroicai: bool,
+    pub enable_rustyai: bool,
     // Reply settings
     pub enable_replies: bool,
     pub mention_poll_seconds: u64,
@@ -20,7 +20,7 @@ impl BotConfig {
     pub fn from_env() -> Result<Self> {
         Ok(Self {
             bot_username: env::var("BOT_USERNAME")
-                .unwrap_or_else(|_| "zeroicai".to_string()),
+                .unwrap_or_else(|_| "rustyai".to_string()),
             post_interval_hours: env::var("POST_INTERVAL_HOURS")
                 .unwrap_or_else(|_| "6".to_string())
                 .parse()?,
@@ -36,7 +36,7 @@ impl BotConfig {
             enable_ai: env::var("ENABLE_AI_CONTENT")
                 .unwrap_or_else(|_| "true".to_string())
                 .to_lowercase() == "true",
-            enable_zeroicai: env::var("ENABLE_ZEROICAI_CONTENT")
+            enable_rustyai: env::var("ENABLE_RUSTYAI_CONTENT")
                 .unwrap_or_else(|_| "true".to_string())
                 .to_lowercase() == "true",
             enable_replies: env::var("ENABLE_REPLIES")
@@ -66,7 +66,7 @@ impl BotConfig {
             anyhow::bail!("MAX_POSTS_PER_DAY must be greater than 0");
         }
 
-        if !self.enable_crypto && !self.enable_meme && !self.enable_ai && !self.enable_zeroicai {
+        if !self.enable_crypto && !self.enable_meme && !self.enable_ai && !self.enable_rustyai {
             anyhow::bail!("At least one content type must be enabled");
         }
 
@@ -83,8 +83,8 @@ impl BotConfig {
         if self.enable_ai {
             categories.push(ContentCategory::AI);
         }
-        if self.enable_zeroicai {
-            categories.push(ContentCategory::ZeroicAI);
+        if self.enable_rustyai {
+            categories.push(ContentCategory::RustyAI);
         }
         if self.enable_crypto {
             categories.push(ContentCategory::Crypto);
@@ -100,7 +100,7 @@ impl BotConfig {
 #[derive(Debug, Clone, Copy)]
 pub enum ContentCategory {
     AI,
-    ZeroicAI,
+    RustyAI,
     Crypto,
     Meme,
 }
