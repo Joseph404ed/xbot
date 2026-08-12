@@ -1,12 +1,12 @@
 use rand::seq::SliceRandom;
 use tracing::warn;
-use z_cognition::{BeliefBase, Belief};
+use cognition::{BeliefBase, Belief};
 
 const MAX_TWEET_LENGTH: usize = 280;
 
 #[derive(Clone, Debug)]
 pub enum TweetTopic {
-    WhatIsZeroicAI,
+    WhatIsRustyAI,
     WhyRust,
     BDI,
     Messaging,
@@ -38,7 +38,7 @@ pub struct TopicQueue {
 impl TopicQueue {
     pub fn new() -> Self {
         let all = vec![
-            TweetTopic::WhatIsZeroicAI,
+            TweetTopic::WhatIsRustyAI,
             TweetTopic::WhyRust,
             TweetTopic::BDI,
             TweetTopic::Messaging,
@@ -76,7 +76,7 @@ impl TopicQueue {
 impl TweetTopic {
     pub fn description(&self) -> &'static str {
         match self {
-            TweetTopic::WhatIsZeroicAI    => "what it means for code to have intention — not instructions, but goals",
+            TweetTopic::WhatIsRustyAI    => "what it means for code to have intention — not instructions, but goals",
             TweetTopic::WhyRust           => "why the language you choose is the architecture you get — and what Rust forces you to face",
             TweetTopic::BDI               => "what separates a system that believes something from one that merely executes",
             TweetTopic::Messaging         => "what happens in the space between agents — the moment between send and receive",
@@ -101,7 +101,7 @@ impl TweetTopic {
 
     pub fn belief_keys(&self) -> &'static [&'static str] {
         match self {
-            TweetTopic::WhatIsZeroicAI   => &["what_is_zeroicai", "modular"],
+            TweetTopic::WhatIsRustyAI   => &["what_is_rustyai", "modular"],
             TweetTopic::WhyRust          => &["why_rust", "design"],
             TweetTopic::BDI              => &["bdi", "beliefs", "utility"],
             TweetTopic::Messaging        => &["messaging", "performatives"],
@@ -118,7 +118,7 @@ impl TweetTopic {
             TweetTopic::OpenSource       => &["license", "github"],
             TweetTopic::Community        => &["telegram", "twitter"],
             TweetTopic::AgentVsScript    => &["bdi", "why_rust"],
-            TweetTopic::MultiAgentShift  => &["patterns", "what_is_zeroicai"],
+            TweetTopic::MultiAgentShift  => &["patterns", "what_is_rustyai"],
             TweetTopic::FaultTolerance   => &["circuit_breaker", "supervisor", "backoff"],
             TweetTopic::FipaStandard     => &["fipa", "messaging"],
         }
@@ -148,9 +148,9 @@ impl TweetGenerator {
         let l = |k: &str| Self::lookup(beliefs, k);
 
         match topic {
-            TweetTopic::WhatIsZeroicAI => vec![
-                format!("{}\n\nzeroicai.xyz", l("what_is_zeroicai")),
-                format!("{}\n\n{}", l("what_is_zeroicai"), l("modular")),
+            TweetTopic::WhatIsRustyAI => vec![
+                format!("{}\n\nrustyai.xyz", l("what_is_rustyai")),
+                format!("{}\n\n{}", l("what_is_rustyai"), l("modular")),
             ],
             TweetTopic::WhyRust => vec![
                 l("why_rust"),
@@ -205,7 +205,7 @@ impl TweetGenerator {
                 format!("Ready to build agents?\n\n{}\n\n{}", l("install"), l("examples")),
             ],
             TweetTopic::OpenSource => vec![
-                format!("{}\n\nzeroicai.xyz", l("license")),
+                format!("{}\n\nrustyai.xyz", l("license")),
                 format!("Open source. Production ready. No lock-in.\n\n{}", l("license")),
             ],
             TweetTopic::Community => vec![
@@ -226,7 +226,7 @@ impl TweetGenerator {
             ],
             TweetTopic::FipaStandard => vec![
                 l("fipa"),
-                format!("ZeroicAI implements FIPA — the IEEE standard for agent communication.\n\n{}", l("fipa")),
+                format!("RustyAI implements FIPA — the IEEE standard for agent communication.\n\n{}", l("fipa")),
             ],
         }
     }
@@ -266,7 +266,7 @@ mod tests {
     fn test_all_topics_produce_tweet() {
         let beliefs = build_knowledge_base();
         let topics = vec![
-            TweetTopic::WhatIsZeroicAI, TweetTopic::WhyRust, TweetTopic::BDI,
+            TweetTopic::WhatIsRustyAI, TweetTopic::WhyRust, TweetTopic::BDI,
             TweetTopic::Messaging, TweetTopic::SwarmPattern, TweetTopic::MarketPattern,
             TweetTopic::CoalitionPattern, TweetTopic::RuntimeSupervisor, TweetTopic::CircuitBreaker,
             TweetTopic::OrgPatterns, TweetTopic::CrateOverview, TweetTopic::Solana,

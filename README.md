@@ -1,4 +1,4 @@
-﻿# ZeroicAI Twitter Bot 
+﻿# RustyAI Twitter Bot 
 
 Autonomous Twitter bot posting bull content about AI, agents, crypto, and meme coins.
 
@@ -7,7 +7,7 @@ Autonomous Twitter bot posting bull content about AI, agents, crypto, and meme c
 -  **Automated Posting** - 4 tweets per day (every 6 hours)
 -  **5 Content Categories**:
   - AI & Machine Learning
-  - ZeroicAI Framework
+  - RustyAI Framework
   - Crypto & DeFi
   - Meme Coins
   - General Bull Posts
@@ -23,9 +23,9 @@ Autonomous Twitter bot posting bull content about AI, agents, crypto, and meme c
 
 ## Account
 
-- **Twitter**: [@ZeroicAI](https://twitter.com/ZeroicAI)
+- **Twitter**: [@RustyAI](https://twitter.com/RustyAI)
 - **Status**: Fully automated bot
-- **Managed by**: ZeroicAI Team
+- **Managed by**: RustyAI Team
 
 ## License
 
@@ -33,4 +33,4 @@ MIT
 
 ---
 
-*Built with Rust 🦀 | Powered by ZeroicAI*
+*Built with Rust 🦀 | Powered by RustyAI*

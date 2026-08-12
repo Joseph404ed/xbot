@@ -1,13 +1,13 @@
 [package]
-name = "zeroic-xbot"
+name = "xbot"
 version = "0.1.0"
 edition = "2021"
-authors = ["ZeroicAI <devzeroicai@gmail.com>"]
+authors = ["RustyAI <devrustyai@gmail.com>"]
 
 [dependencies]
-# ZeroicAI framework
-z-core = { git = "https://github.com/ZeroicAI/z-core", branch = "main" }
-z-cognition = { git = "https://github.com/ZeroicAI/z-cognition", branch = "main" }
+# RustyAI framework
+agent-core = { path = "../agent-core" }
+cognition = { path = "../cognition" }
 
 # Twitter API v2 with manual OAuth 1.0a
 reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
