@@ -149,7 +149,7 @@ impl TweetGenerator {
 
         match topic {
             TweetTopic::WhatIsRustyAI => vec![
-                format!("{}\n\nrustyai.xyz", l("what_is_rustyai")),
+                format!("{}\n\nwww.rustyaifw.xyz", l("what_is_rustyai")),
                 format!("{}\n\n{}", l("what_is_rustyai"), l("modular")),
             ],
             TweetTopic::WhyRust => vec![
@@ -205,7 +205,7 @@ impl TweetGenerator {
                 format!("Ready to build agents?\n\n{}\n\n{}", l("install"), l("examples")),
             ],
             TweetTopic::OpenSource => vec![
-                format!("{}\n\nrustyai.xyz", l("license")),
+                format!("{}\n\nwww.rustyaifw.xyz", l("license")),
                 format!("Open source. Production ready. No lock-in.\n\n{}", l("license")),
             ],
             TweetTopic::Community => vec![

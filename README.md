@@ -23,7 +23,7 @@ Autonomous Twitter bot posting bull content about AI, agents, crypto, and meme c
 
 ## Account
 
-- **Twitter**: [@RustyAI](https://twitter.com/RustyAI)
+- **Twitter**: [@RustyAIFwk](https://x.com/RustyAIFwk)
 - **Status**: Fully automated bot
 - **Managed by**: RustyAI Team
 

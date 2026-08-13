@@ -404,7 +404,7 @@ async fn generate_reply_with_llm(
 
     let prompt = format!(
         "You are Agent {agent_name}, an AI agent inside the RustyAI multi-agent framework for Rust.\n\
-        A user mentioned @RustyAI on X (Twitter).{conversation}\n\
+        A user mentioned @RustyAIFwk on X (Twitter).{conversation}\n\
         {image_note}\
         \nRustyAI knowledge (do not invent facts outside this):\n{context}\n\
         \nHow to reply:\n\
