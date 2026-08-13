@@ -237,12 +237,12 @@ fn extract_facts(text: &str) -> Vec<String> {
 fn get_response_candidates(topic: &str, beliefs: &BeliefBase) -> Vec<String> {
     match topic {
         "topic:what_is" => vec![
-            format!("{}\n\nLearn more: https://rustyai.xyz", lookup(beliefs, "what_is_rustyai")),
+            format!("{}\n\nLearn more: https://www.rustyaifw.xyz", lookup(beliefs, "what_is_rustyai")),
             format!("{} {}", lookup(beliefs, "what_is_rustyai"), lookup(beliefs, "modular")),
         ],
         "topic:patterns" => vec![
             lookup(beliefs, "patterns"),
-            format!("{}\n\nExplore: https://github.com/rustyai/examples", lookup(beliefs, "patterns")),
+            format!("{}\n\nExplore: https://github.com/RustyAIFW/examples", lookup(beliefs, "patterns")),
         ],
         "topic:messaging" => vec![
             lookup(beliefs, "messaging"),
@@ -270,7 +270,7 @@ fn get_response_candidates(topic: &str, beliefs: &BeliefBase) -> Vec<String> {
         ],
         "topic:getting_started" => vec![
             format!("{}\n\n{}\n\n{}", lookup(beliefs, "install"), lookup(beliefs, "examples"), lookup(beliefs, "docs")),
-            format!("{}\n\nCheck out our examples: https://github.com/rustyai/examples", lookup(beliefs, "install")),
+            format!("{}\n\nCheck out our examples: https://github.com/RustyAIFW/examples", lookup(beliefs, "install")),
         ],
         "topic:why_rust" => vec![
             lookup(beliefs, "why_rust"),
@@ -294,7 +294,7 @@ fn get_response_candidates(topic: &str, beliefs: &BeliefBase) -> Vec<String> {
         ],
         "topic:owner" => vec![
             lookup(beliefs, "owner"),
-            format!("{}\n\nFollow the project: https://github.com/RustyAI", lookup(beliefs, "owner")),
+            format!("{}\n\nFollow the project: https://github.com/RustyAIFW", lookup(beliefs, "owner")),
         ],
         "topic:solana" => vec![
             lookup(beliefs, "solana"),
@@ -303,7 +303,7 @@ fn get_response_candidates(topic: &str, beliefs: &BeliefBase) -> Vec<String> {
         ],
         _ => vec![
             format!("{}\n\nAsk me about patterns, messaging, cognition, runtime, or getting started!", lookup(beliefs, "what_is_rustyai")),
-            "I'm RustyAI — a multi-agent framework for Rust! Ask me about our 8 patterns, BDI cognition, message routing, or how to get started.\n\nhttps://rustyai.xyz".to_string(),
+            "I'm RustyAI — a multi-agent framework for Rust! Ask me about our 8 patterns, BDI cognition, message routing, or how to get started.\n\nhttps://www.rustyaifw.xyz".to_string(),
         ],
     }
 }
