@@ -20,7 +20,7 @@ impl BotConfig {
     pub fn from_env() -> Result<Self> {
         Ok(Self {
             bot_username: env::var("BOT_USERNAME")
-                .unwrap_or_else(|_| "rustyai".to_string()),
+                .unwrap_or_else(|_| "RustyAIFwk".to_string()),
             post_interval_hours: env::var("POST_INTERVAL_HOURS")
                 .unwrap_or_else(|_| "6".to_string())
                 .parse()?,
